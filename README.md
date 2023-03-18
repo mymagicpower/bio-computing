@@ -77,10 +77,34 @@
 </div>
 
 
-### Git地址：    
-[Github链接](https://github.com/mymagicpower/bio-computing)    
-[Gitee链接](https://gitee.com/mymagicpower/bio-computing)   
 
-<div align="center">
-  <a href="http://aias.top/">点击返回网站首页</a>
-</div>  
+
+#### 其它研究专题:
+
+
+#### 1. 人工智能加速器套件
+<div align="left">
+<img src="https://aias-home.oss-cn-beijing.aliyuncs.com/images/logo.png"  width = "150"  />
+</div>
+
+- 官网: https://www.aias.top/
+- Gitee:  https://gitee.com/mymagicpower/AIAS  
+- GitHub: https://github.com/mymagicpower/AIAS
+
+#### 2. AI + 量子计算
+<div align="left">
+<img src="https://qubits.oss-cn-shanghai.aliyuncs.com/images/logo.png"  width = "150"  />
+</div>
+
+- 官网: https://www.qubits.top/      
+- Gitee:  https://gitee.com/mymagicpower/qubits     
+- GitHub: https://github.com/mymagicpower/qubits     
+
+#### 3. AI 桌面工具集 - 简单易用的AI桌面工具
+<div align="left">
+<img src="https://aiart.oss-cn-shanghai.aliyuncs.com/images/logo.png"  width = "200"  />
+</div>
+
+- 官网: https://www.aiarts.top/           
+- Gitee:  https://gitee.com/mymagicpower/easy_AI_apps        
+- GitHub: https://github.com/mymagicpower/easy_AI_apps  
