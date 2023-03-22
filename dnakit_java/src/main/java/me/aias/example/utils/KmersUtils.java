@@ -2,7 +2,12 @@ package me.aias.example.utils;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ *
+ * @author Calvin
+ *
+ * @email 179209347@qq.com
+ **/
 public class KmersUtils {
     public static void main(String[] args) {
         int k = 4;

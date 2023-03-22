@@ -5,11 +5,14 @@ import org.apache.commons.lang3.StringUtils;
 import java.nio.ByteBuffer;
 
 /**
- * @author Calvin <179209347@qq.com>
+ * @author Calvin
+ *
+ * <179209347@qq.com>
  */
 public class BytesUtils {
     /**
      * 将byte数组转换成string类型表示
+     * Convert byte array to string representation
      *
      * @param src
      * @return
@@ -22,6 +25,7 @@ public class BytesUtils {
         String hv;
         for (int i = 0; i < src.length; i++) {
             // 以十六进制（基数 16）无符号整数形式返回一个整数参数的字符串表示形式，并转换为大写
+            // Returns a string representation of the integer argument as an unsigned integer in base 16.
             hv = Integer.toHexString(src[i] & 0xFF).toUpperCase();
             if (hv.length() < 2) {
                 builder.append(0);
@@ -34,6 +38,7 @@ public class BytesUtils {
 
     /**
      * 将Hex String转换为Byte数组
+     * Convert a Hex String to a Byte Array
      *
      * @param hexString the hex string
      * @return the byte [ ]
@@ -59,6 +64,7 @@ public class BytesUtils {
 
     /**
      * 将Byte数组转换为 ByteBuffer
+     * Convert Byte Array to ByteBuffer
      *
      * @param bytes
      * @return ByteBuffer
@@ -70,6 +76,7 @@ public class BytesUtils {
 
     /**
      * 把byte数组转为bit字符串
+     * Convert byte array to bit string
      *
      * @param bytes the byte
      * @return String
@@ -85,6 +92,7 @@ public class BytesUtils {
     
     /**
      * 把byte转为bit字符串
+     * Convert byte to bit string
      *
      * @param b the byte
      * @return String

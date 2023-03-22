@@ -4,13 +4,14 @@ import lombok.Getter;
 
 /**
  * 状态枚举
+ * Status enumeration
  */
 @Getter
 public enum ResEnum {
-    INFO_NOT_FOUND("0001", "未找到任何相似文本"),
-    MODEL_ERROR("0002", "模型推理出错"),
-    MILVUS_CONNECTION_ERROR("0003", "向量引擎连接错误"),
-    SYSTEM_ERROR("1001", "内部系统错误");
+    INFO_NOT_FOUND("0001","No similar text found"),
+    MODEL_ERROR("0002","Model inference error"),
+    MILVUS_CONNECTION_ERROR("0003","Vector engine connection error"),
+    SYSTEM_ERROR("1001","Internal system error");
     public String KEY;
     public String VALUE;
 

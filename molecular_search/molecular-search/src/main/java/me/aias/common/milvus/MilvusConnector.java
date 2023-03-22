@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 public final class MilvusConnector {
 
     // 创建一个 Milvus 客户端
+    // create Milvus client
     private MilvusClient client = null;
 
     public void init(String host, int port) {

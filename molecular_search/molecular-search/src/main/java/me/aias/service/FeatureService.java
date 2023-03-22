@@ -4,7 +4,7 @@ import java.nio.ByteBuffer;
 
 /**
  * 特征提取服务接口
- *
+ * Feature Extraction Service Interface
  * @author Calvin
  * @date 2021-12-19
  **/

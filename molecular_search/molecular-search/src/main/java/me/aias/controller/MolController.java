@@ -32,6 +32,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 文本管理
+ * Text management
  *
  * @author Calvin
  * @date 2021-12-19
@@ -39,7 +40,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@Api(tags = "数据管理")
+@Api(tags = "数据管理 - Text management")
 @RequestMapping("/api/text")
 public class MolController {
     private final FileProperties properties;
@@ -61,7 +62,7 @@ public class MolController {
     @Value("${search.collectionName}")
     String collectionName;
 
-    @ApiOperation(value = "提取分子特征值")
+    @ApiOperation(value = "提取分子特征值 -Extract mol features")
     @GetMapping("/extractFeatures")
     public ResultBean extractFeatures(@RequestParam(value = "id") String id) {
         LocalStorage localStorage = localStorageService.findById(Integer.parseInt(id));
@@ -71,7 +72,8 @@ public class MolController {
         List<String> lines = FileUtils.readFile(file);
         List<MolInfoDto> list = new ArrayList<>();
         MolInfoDto molInfoDto;
-        // 解析DNA信息
+        // 解析分子信息
+        // Parse mol information
         ConcurrentHashMap<Long, MolInfoDto> map = textService.getMap();
         long size = map.size();
         for (int i = 0; i < lines.size(); i++) {
@@ -81,8 +83,10 @@ public class MolController {
             molInfoDto.setId(size++);
             molInfoDto.setSmiles(smiles);
             // 获取特征向量
+            // Get feature vector
             molInfoDto.setFeature(featureService.molFeature(smiles));
             //生成分子图片
+            // generate mol image
             RWMol m1 = RWMol.MolFromSmiles(smiles);
             String rootPath = properties.getPath().getPath();
             SvgUtils.convertToPng(m1.ToSVG(), rootPath + molInfoDto.getId() + ".png");

@@ -33,12 +33,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 搜索管理
+ * Search management
  *
  * @author Calvin
  * @date 2021-12-19
  **/
 @Slf4j
-@Api(tags = "搜索管理")
+@Api(tags = "搜索管理 - Search management")
 @RequestMapping("/api/search")
 @RequiredArgsConstructor
 @RestController
@@ -51,9 +52,10 @@ public class SearchController {
     private FeatureService featureService;
 
     @GetMapping("/sequence")
-    @ApiOperation(value = "DNA序列搜索", nickname = "search")
+    @ApiOperation(value = "DNA序列搜索 - DNA sequence search", nickname = "search")
     public ResultBean search(@RequestParam("sequence") String sequence, @RequestParam(value = "topK") String topk) {
         //获取spark
+        // get spark
         SparkSession sparkSession = SparkSession.builder().master("local[*]").appName("CountVectorizerModel").getOrCreate();
         StructType schema = new StructType(new StructField[]{
                 new StructField("label", DataTypes.StringType, false, Metadata.empty()),
@@ -65,6 +67,7 @@ public class SearchController {
         List<Float> vectorToSearch;
         try {
             //获取数据 DataFrames
+            // get data frames
             List<Row> rawData = DataUtils.getRawData("", sequence);
             Dataset<Row> data = sparkSession.createDataFrame(rawData, schema);
             vectorToSearch = featureService.dnaFeature(data);
@@ -79,11 +82,13 @@ public class SearchController {
 
         try {
             // 根据向量搜索
+            // Search by vectors
             R<SearchResults> searchResponse = searchService.search(topK, vectorsToSearch);
             SearchResultsWrapper wrapper = new SearchResultsWrapper(searchResponse.getData().getResults());
             List<SearchResultsWrapper.IDScore> scores = wrapper.getIDScore(0);
 
             // 根据ID获取文本信息
+            // Get information by ID
             ConcurrentHashMap<Long, DNAInfoDto> map = textService.getMap();
             List<DNAInfoRes> textInfoResList = new ArrayList<>();
             for (SearchResultsWrapper.IDScore score : scores) {

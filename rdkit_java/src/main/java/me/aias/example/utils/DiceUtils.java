@@ -7,6 +7,8 @@ import org.RDKit.RWMol;
 
 /**
  * Dice距离用于度量两个集合的相似性，因为可以把字符串理解为一种集合，因此Dice距离也会用于度量字符串的相似性。
+ * The Dice distance is used to measure the similarity between two sets, and since strings
+ * can be understood as a type of set, the Dice distance is also used to measure the similarity between strings.
  */
 public class DiceUtils {
     /**

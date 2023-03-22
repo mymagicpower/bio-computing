@@ -1,8 +1,8 @@
 <template>
   <div class="app-container">
     <el-form ref="form" :model="form">
-      <el-input v-model="form.sequence" placeholder="请输入内容" class="input-with-select">
-        <el-select slot="prepend" v-model="form.topK" placeholder="请选择">
+      <el-input v-model="form.sequence" placeholder="please enter data" class="input-with-select">
+        <el-select slot="prepend" v-model="form.topK" placeholder="Select">
           <el-option label="Top 5" value="5" />
           <el-option label="Top 10" value="10" />
           <el-option label="Top 20" value="20" />
@@ -10,7 +10,7 @@
           <el-option label="Top 100" value="100" />
           <el-option label="Top 200" value="200" />
         </el-select>
-        <el-button slot="append" icon="el-icon-search" element-loading-text="拼命加载中" @click="onSubmit" />
+        <el-button slot="append" icon="el-icon-search" element-loading-text="loading" @click="onSubmit" />
 
       </el-input>
       <el-row>

@@ -8,6 +8,16 @@
  * 也就是说，它是字符串中非零的元素个数：对于二进制字符串来说，就是 1 的个数，
  * 所以 11101 的汉明重量是 4。
  * 下面的代码展示了在Java中如何计算汉明距离和汉明重量。
+ *
+ * In information theory, the Hamming distance between two strings of equal length
+ * is the number of positions at which the corresponding symbols are different.
+ * In other words, the Hamming distance is the minimum number of symbol substitutions required to transform one string into the other.
+ * For example, the Hamming distance between 1011101 and 1001001 is 2,
+ * and the Hamming distance between "toned" and "roses" is 3.
+ * The Hamming weight of a string is the Hamming distance to the zero string of the same length,
+ * which is the number of non-zero elements in the string. For binary strings, it is the number of ones.
+ * Thus, the Hamming weight of 11101 is 4.
+ * The following code shows how to calculate the Hamming distance and Hamming weight in Java.
  */
 package me.aias.example.utils;
 

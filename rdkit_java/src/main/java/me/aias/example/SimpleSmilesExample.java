@@ -8,7 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author Calvin <179209347@qq.com>
+ * @author Calvin
+ *
+ * <179209347@qq.com>
  */
 public class SimpleSmilesExample {
     private static final Logger logger = LoggerFactory.getLogger(SimpleSmilesExample.class);
@@ -31,17 +33,20 @@ public class SimpleSmilesExample {
         logger.info("smi1: {}", smi1);
         logger.info("smi2: {}", smi2);
         
-        //读写分子
+        // 读写分子
+        // Molecule Reading and Writing
         RWMol m1 = RWMol.MolFromSmiles(smi1);
         RWMol m2 = RWMol.MolFromSmiles(smi2);
         ExplicitBitVect fp1 = RDKFuncs.RDKFingerprintMol(m1);
         ExplicitBitVect fp2 = RDKFuncs.RDKFingerprintMol(m2);
 
-        //生成图片
+        // 生成图片
+        // Image Generation
         SvgUtils.convertToPng(m1.ToSVG(),"build/output/m1.png");
         SvgUtils.convertToPng(m2.ToSVG(),"build/output/m2.png");
         
-        //计算分子相似性
+        // 计算分子相似性
+        // Molecule Similarity Calculation
         double dis = RDKFuncs.AllBitSimilarity(fp1, fp2);
         logger.info("AllBitSimilarity: {}", dis);
 
@@ -51,7 +56,10 @@ public class SimpleSmilesExample {
         fp1 = RDKFuncs.MACCSFingerprintMol(m1);
         fp2 = RDKFuncs.MACCSFingerprintMol(m2);
         dis = RDKFuncs.DiceSimilarity(fp1, fp2);
-        //Dice距离用于度量两个集合的相似性，因为可以把字符串理解为一种集合，因此Dice距离也会用于度量字符串的相似性。
+        // Dice距离用于度量两个集合的相似性，因为可以把字符串理解为一种集合，因此Dice距离也会用于度量字符串的相似性。
+        // The Dice distance is used to measure the similarity between two sets,
+        // and because strings can be understood as a kind of set,
+        // the Dice distance is also used to measure the similarity between strings.
         logger.info("DiceSimilarity: {}", dis);
 
 

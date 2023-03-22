@@ -18,6 +18,7 @@ import java.util.List;
 public class DNASequennceExample {
     public static void main(String[] args) throws IOException {
         //获取spark
+        // Get Spark
         SparkSession spark = SparkSession.builder().master("local[*]").appName("CountVectorizerModel").getOrCreate();
         Path humanPath = Paths.get("src/test/resources/human_data.txt");
         Path chimpPath = Paths.get("src/test/resources/chimp_data.txt");
@@ -28,6 +29,7 @@ public class DNASequennceExample {
         FileUtils.downloadDogData(dogPath);
 
         //获取数据 DataFrames
+        // Get DataFrames
         List<Row> humanData = DataUtils.getRawData(humanPath);
         List<Row> chimpData = DataUtils.getRawData(chimpPath);
         List<Row> dogData = DataUtils.getRawData(dogPath);
@@ -48,6 +50,7 @@ public class DNASequennceExample {
 
         //dim 768
         //设定词汇表的最大量为768
+        // Set the maximum size of the vocabulary to be 768
         CountVectorizerModel cvModel = new CountVectorizer().setInputCol("sequence")
                 .setOutputCol("features")
                 .setVocabSize(768)

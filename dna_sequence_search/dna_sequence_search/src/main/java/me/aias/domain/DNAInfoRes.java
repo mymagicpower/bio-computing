@@ -6,9 +6,10 @@ import lombok.Data;
 
 /**
  * 信息返回对象
+ * Info result object
  */
 @Data
-@ApiModel(value = "DNAInfoRes", description = "信息返回对象")
+@ApiModel(value = "DNAInfoRes", description = "Info result object")
 public class DNAInfoRes {
     @ApiModelProperty(value = "id", name = "id")
     private Long id;
@@ -16,9 +17,9 @@ public class DNAInfoRes {
     @ApiModelProperty(value = "Score", name = "score")
     private Float score;
 
-    @ApiModelProperty(value = "类别", name = "label")
+    @ApiModelProperty(value = "label", name = "label")
     private String label;
 
-    @ApiModelProperty(value = "DNA序列", name = "sequence")
+    @ApiModelProperty(value = "sequence", name = "sequence")
     private String sequence;
 }

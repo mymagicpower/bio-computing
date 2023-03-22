@@ -29,12 +29,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 搜索管理
+ * Search management
  *
  * @author Calvin
  * @date 2021-12-19
  **/
 @Slf4j
-@Api(tags = "搜索管理")
+@Api(tags = "搜索管理 - Search management")
 @RequestMapping("/api/search")
 @RequiredArgsConstructor
 @RestController
@@ -53,7 +54,7 @@ public class SearchController {
     String baseUrl;
 
     @GetMapping("/mol")
-    @ApiOperation(value = "分子搜索", nickname = "search")
+    @ApiOperation(value = "分子搜索 - mol search", nickname = "search")
     public ResultBean search(@RequestParam("smiles") String smiles, @RequestParam(value = "topK") String topk) {
         Long topK = Long.parseLong(topk);
         ByteBuffer vectorToSearch = null;
@@ -71,6 +72,7 @@ public class SearchController {
 
         try {
             // 根据向量搜索
+            // Search by vectors
             SearchResponse searchResponse = searchService.search(this.collectionName, topK, vectorsToSearch);
             List<List<Long>> resultIds = searchResponse.getResultIdsList();
             if (resultIds == null || resultIds.size() == 0) {
@@ -81,6 +83,7 @@ public class SearchController {
             });
 
             // 根据ID获取文本信息
+            // Get information by ID
             ConcurrentHashMap<Long, MolInfoDto> map = textService.getMap();
             List<MolInfoRes> textInfoResList = new ArrayList<>();
             for (String uid : idList) {

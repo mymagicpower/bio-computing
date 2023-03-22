@@ -36,6 +36,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 文本管理
+ * Text management
  *
  * @author Calvin
  * @date 2021-12-19
@@ -43,7 +44,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@Api(tags = "DNA数据管理")
+@Api(tags = "DNA数据管理 - DNA data management")
 @RequestMapping("/api/text")
 public class DNASeqController {
     @Autowired
@@ -58,7 +59,7 @@ public class DNASeqController {
     @Autowired
     private LocalStorageService localStorageService;
 
-    @ApiOperation(value = "提取DNA特征值")
+    @ApiOperation(value = "提取DNA特征值 -Extract DNA features")
     @GetMapping("/extractFeatures")
     public ResponseEntity<Object> extractFeatures(@RequestParam(value = "id") String id) {
         LocalStorage localStorage = localStorageService.findById(Integer.parseInt(id));
@@ -74,14 +75,17 @@ public class DNASeqController {
         });
 
         //获取spark
+        // Get Spark
         SparkSession sparkSession = SparkSession.builder().master("local[*]").appName("CountVectorizerModel").getOrCreate();
         Dataset<Row> data = sparkSession.createDataFrame(rawData, schema);
         data.show(5);
         vectorizerModel.train(data);
         //显示训练后的词表
+        // Show the trained vocabulary
         log.info("Vocabulary：" + Arrays.toString(vectorizerModel.vocabulary()));
 
         //生成特征向量
+        // Generate feature vectors
         Dataset<Row> result = vectorizerModel.transform(data);
         result.show(5);
         List<Row> rowList = result.collectAsList();
@@ -89,6 +93,7 @@ public class DNASeqController {
         List<DNAInfoDto> list = new ArrayList<>();
         DNAInfoDto textInfoDto;
         // 解析DNA信息
+        // Parse DNA information
         ConcurrentHashMap<Long, DNAInfoDto> map = textService.getMap();
         long size = map.size();
         int dimension = 0;
@@ -102,10 +107,13 @@ public class DNASeqController {
             textInfoDto.setLabel(label);
             textInfoDto.setSequence(sequence);
             // 获取稀疏向量
+            // Get sparse vector
             SparseVector sv = (SparseVector) rowList.get(0).getAs(3);
             // 获取稠密向量
+            // Get dense vector
             DenseVector dv = sv.toDense();
             // 获取向量数组并归一化 L2
+            // Get vector array and normalize L2
             List<Float> feature = FeatureUtils.normalizer(dv.toArray());
             dimension = feature.size();
             textInfoDto.setFeature(feature);
@@ -113,6 +121,7 @@ public class DNASeqController {
         }
 
         // 将向量插入向量引擎
+        // Insert vectors into vector engine
         try {
             R<Boolean> response = searchService.hasCollection();
             if (!response.getData()) {

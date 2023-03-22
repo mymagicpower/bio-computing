@@ -1,17 +1,22 @@
 
+<div align="center">
+  <a href="http://biocomputing.top/">网站首页</a>
+</div>  
 
 
-## Bioinformatics
-Includes chemical molecular toolkits, DNA toolkits, DNA sequence search, molecular search, and more.
 
-### Toolboxes
+## 生物计算
+包括化学分子工具包，DNA工具包，DNA序列搜索，分子搜索等等。
+
+### 工具箱
 
 <div align="center">
   <table>
     <tr>
       <td>
         <div align="left">
-        	<p>Chemical Molecular Toolkits</p>
+        	<p>化学分子工具包</p>
+          <a href="http://biocomputing.top/docs/rdkit_java.html" target="_blank">链接</a>      
         </div>
       </td>    	
       <td>
@@ -23,7 +28,8 @@ Includes chemical molecular toolkits, DNA toolkits, DNA sequence search, molecul
     <tr>
       <td style="width:220px">
         <div align="left">
-        	<p>DNA Toolkits</p>
+        	<p>DNA工具包</p>
+          <a href="http://biocomputing.top/docs/dnakit_java.html" target="_blank">链接</a>    
         </div>
       </td>    	
       <td>
@@ -37,14 +43,15 @@ Includes chemical molecular toolkits, DNA toolkits, DNA sequence search, molecul
 
 
 
-### Search
+### 搜素
 
 <div align="center">
   <table>
     <tr>
       <td>
         <div align="left">
-        	<p>Molecular Search</p>
+        	<p>分子搜索</p>
+          <a href="http://biocomputing.top/docs/mol_search.html" target="_blank">链接</a>        
         </div>
       </td>    	
       <td>
@@ -56,7 +63,8 @@ Includes chemical molecular toolkits, DNA toolkits, DNA sequence search, molecul
     <tr>
       <td style="width:220px">
         <div align="left">
-        	<p>DNA Sequence Search</p>
+        	<p>DNA序列搜索</p>
+          <a href="http://biocomputing.top/docs/dna_sequence_search.html" target="_blank">链接</a>        
         </div>
       </td>    	
       <td>
@@ -71,26 +79,32 @@ Includes chemical molecular toolkits, DNA toolkits, DNA sequence search, molecul
 
 
 
-#### Other Open Source Projects:
+#### 其它研究专题:
 
 
-#### 1. AI Accelerator Suite
+#### 1. 人工智能加速器套件
 <div align="left">
 <img src="https://aias-home.oss-cn-beijing.aliyuncs.com/images/logo.png"  width = "150"  />
 </div>
 
+- 官网: https://www.aias.top/
+- Gitee:  https://gitee.com/mymagicpower/AIAS  
 - GitHub: https://github.com/mymagicpower/AIAS
 
-#### 2. AI + Quantum Computing
+#### 2. AI + 量子计算
 <div align="left">
 <img src="https://qubits.oss-cn-shanghai.aliyuncs.com/images/logo.png"  width = "150"  />
 </div>
 
+- 官网: https://www.qubits.top/      
+- Gitee:  https://gitee.com/mymagicpower/qubits     
 - GitHub: https://github.com/mymagicpower/qubits     
 
-#### 3. AI Desktop Toolset - A Simple and Easy-to-use AI Desktop Toolset
+#### 3. AI 桌面工具集 - 简单易用的AI桌面工具
 <div align="left">
 <img src="https://aiart.oss-cn-shanghai.aliyuncs.com/images/logo.png"  width = "200"  />
 </div>
 
+- 官网: https://www.aiarts.top/           
+- Gitee:  https://gitee.com/mymagicpower/easy_AI_apps        
 - GitHub: https://github.com/mymagicpower/easy_AI_apps  

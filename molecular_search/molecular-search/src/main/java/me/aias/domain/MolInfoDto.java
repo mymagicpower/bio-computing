@@ -7,6 +7,7 @@ import java.nio.ByteBuffer;
 
 /**
  * 分子对象
+ * Mol object
  *
  * @author Calvin
  * @date 2021-12-12
@@ -20,11 +21,15 @@ public class MolInfoDto implements Serializable {
 
     /**
      * 分子结构
-     * SMILES（Simplified molecular input line entry system），简化分子线性输入规范
+     * molecular structure
+     *
+     * 简化分子线性输入规范
+     * SMILES（Simplified molecular input line entry system）
      */
     private String smiles;
     /**
      * 特征向量
+     * feature vector
      */
     ByteBuffer feature;
 }

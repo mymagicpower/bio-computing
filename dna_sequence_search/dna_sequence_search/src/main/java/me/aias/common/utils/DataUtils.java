@@ -6,11 +6,17 @@ import org.apache.spark.sql.RowFactory;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ *
+ * @author Calvin
+ *
+ * @email 179209347@qq.com
+ **/
 public class DataUtils {
 
     /**
      * 读取数据生成 Row list
+     * Read Raw data
      *
      * @param lines
      * @return
@@ -42,6 +48,7 @@ public class DataUtils {
 
     /**
      * 生成 Row list
+     * Get Raw Data
      *
      * @param label
      * @param sequence

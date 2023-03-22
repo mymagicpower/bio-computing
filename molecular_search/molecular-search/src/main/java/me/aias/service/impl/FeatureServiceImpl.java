@@ -13,6 +13,7 @@ import java.nio.ByteBuffer;
 
 /**
  * 特征提取服务
+ * Feature service
  *
  * @author Calvin
  * @date 2021-12-19

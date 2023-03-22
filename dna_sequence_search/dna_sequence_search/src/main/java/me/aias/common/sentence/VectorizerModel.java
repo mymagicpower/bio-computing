@@ -7,6 +7,7 @@ import org.apache.spark.sql.Row;
 
 /**
  * CountVectorizer是属于常见的特征数值计算类，是一个文本特征提取方法
+ * CountVectorizer is a common feature numerical calculation class and a text feature extraction method
  *
  * @author Calvin
  * @date 2021-12-19
@@ -21,6 +22,7 @@ public final class VectorizerModel {
 
     public void train(Dataset<Row> data) {
         //设定词汇表的最大量为768
+        // Set the maximum vocabulary size to 768
         cvModel = new CountVectorizer().setInputCol("kmers")
                 .setOutputCol("features")
                 .setVocabSize(size)

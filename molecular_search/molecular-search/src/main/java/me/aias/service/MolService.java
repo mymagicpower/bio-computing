@@ -7,6 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 文本服务接口
+ * Text Service Interface
  *
  * @author Calvin
  * @date 2021-12-19
@@ -14,21 +15,25 @@ import java.util.concurrent.ConcurrentHashMap;
 public interface MolService {
     /**
      * 根据ID查询
+     * Find mol by ID
      */
     MolInfoDto findById(Long id);
 
     /**
      * 添加文本
+     * add text
      */
     public void addText(MolInfoDto textInfoDto);
 
     /**
      * 添加文本
+     * add text
      */
     public void addTexts(List<MolInfoDto> texts);
 
     /**
-     * 获取图片清单
+     * 获取分子清单
+     * get mol list
      */
     ConcurrentHashMap<Long, MolInfoDto> getMap();
 }

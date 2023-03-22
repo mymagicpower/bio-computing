@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 特征向量工具类
+ * Feature Utility Class
  *
  * @author Calvin
  * @date 2021-12-19

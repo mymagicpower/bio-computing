@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * RDKit配置
+ * RDKit Configuration
  *
  * @author Calvin
  * @date 2021-12-19

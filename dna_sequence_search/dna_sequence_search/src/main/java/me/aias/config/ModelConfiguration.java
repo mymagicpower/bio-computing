@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 模型配置
+ * Model Configuration
  *
  * @author Calvin
  * @date 2021-12-19
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ModelConfiguration {
     // 设定词汇表的最大量为768
+    // Set the maximum amount of vocabulary to 768
     @Value("${search.size}")
     private int size;
 

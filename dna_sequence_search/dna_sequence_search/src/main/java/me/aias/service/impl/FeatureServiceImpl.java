@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * 特征提取服务
+ * Feature service
  *
  * @author Calvin
  * @date 2021-12-19
@@ -31,8 +32,10 @@ public class FeatureServiceImpl implements FeatureService {
         dataset = dataset.select("features");
         List<Row> list = dataset.collectAsList();
         // 获取稀疏向量
+        // get sparse vector
         SparseVector sv = (SparseVector) list.get(0).getAs(0);
         // 获取稠密向量
+        // get dense vector
         DenseVector dv = sv.toDense();
         List<Float> feature = FeatureUtils.normalizer(dv.toArray());
         return feature;

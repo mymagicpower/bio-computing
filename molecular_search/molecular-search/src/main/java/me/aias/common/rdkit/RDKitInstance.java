@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 
 /**
  * RDKit 初始化
+ * RDKit Initialization
  *
  * @author Calvin
  * @date 2021-12-19

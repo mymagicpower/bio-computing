@@ -16,7 +16,8 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 图片服务
+ * DNA 序列服务
+ * DNA Sequence Service
  *
  * @author Calvin
  * @date 2021-12-19
@@ -55,6 +56,7 @@ public class DNAServiceImpl implements DNAService {
 
     /**
      * 新增文本
+     * Add new file
      */
     public void addText(DNAInfoDto textInfoDto) {
         map.put(textInfoDto.getId(), textInfoDto);
@@ -63,6 +65,7 @@ public class DNAServiceImpl implements DNAService {
 
     /**
      * 新增文本
+     * Add new file
      */
     public void addTexts(List<DNAInfoDto> texts) {
         for (DNAInfoDto DNAInfoDto : texts) {
@@ -74,13 +77,15 @@ public class DNAServiceImpl implements DNAService {
 
     /**
      * 根据ID查询
+     * find file by id
      */
     public DNAInfoDto findById(Long id) {
         return map.get(id);
     }
 
     /**
-     * 获取图片清单
+     * 获取清单
+     * get list
      */
     public ConcurrentHashMap<Long, DNAInfoDto> getMap() {
         return map;
@@ -88,6 +93,7 @@ public class DNAServiceImpl implements DNAService {
 
     /**
      * 保存上传文件列表
+     * save text list
      */
     private void saveTextList() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

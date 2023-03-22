@@ -44,7 +44,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/search/index'),
         name: 'search',
-        meta: { title: 'DNA序列搜索', icon: 'el-icon-search' }
+        meta: { title: 'DNA Search', icon: 'el-icon-search' }
       }
     ]
   },
@@ -56,7 +56,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/storage/index'),
         name: 'storage',
-        meta: { title: '数据管理', icon: 'el-icon-upload' }
+        meta: { title: 'Data Management', icon: 'el-icon-upload' }
       }
     ]
   },

@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * 文本对象
+ * Text object
  *
  * @author Calvin
  * @date 2021-12-12
@@ -19,15 +20,16 @@ public class DNAInfoDto implements Serializable {
     private Long id;
 
     /**
-     * 类别
+     * label
      */
     private String label;
     /**
-     * dna 序列
+     * dna sequence
      */
     private String sequence;
     /**
      * 特征向量
+     * feature
      */
     List<Float> feature;
 }

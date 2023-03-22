@@ -6,9 +6,10 @@ import lombok.Data;
 
 /**
  * 信息返回对象
+ * Mol Info Res
  */
 @Data
-@ApiModel(value = "MolInfoRes", description = "信息返回对象")
+@ApiModel(value = "MolInfoRes", description = "MolInfoRes")
 public class MolInfoRes {
     @ApiModelProperty(value = "id", name = "id")
     private Long id;
@@ -16,7 +17,7 @@ public class MolInfoRes {
     @ApiModelProperty(value = "Score", name = "score")
     private Float score;
 
-    @ApiModelProperty(value = "分子结构", name = "smiles")
+    @ApiModelProperty(value = "smiles", name = "smiles")
     private String smiles;
 
     @ApiModelProperty(value = "url", name = "url")

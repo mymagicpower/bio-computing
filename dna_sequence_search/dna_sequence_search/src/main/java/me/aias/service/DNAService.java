@@ -7,6 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 文本服务接口
+ * Text Service Interface
  *
  * @author Calvin
  * @date 2021-12-19
@@ -14,21 +15,25 @@ import java.util.concurrent.ConcurrentHashMap;
 public interface DNAService {
     /**
      * 根据ID查询
+     * Find dna by ID
      */
     DNAInfoDto findById(Long id);
 
     /**
      * 添加文本
+     * add text
      */
     public void addText(DNAInfoDto textInfoDto);
 
     /**
      * 添加文本
+     * add texts
      */
     public void addTexts(List<DNAInfoDto> texts);
 
     /**
-     * 获取图片清单
+     * 获取DNA清单
+     * get dna list
      */
     ConcurrentHashMap<Long, DNAInfoDto> getMap();
 }

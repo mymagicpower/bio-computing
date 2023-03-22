@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Milvus配置类
+ * Milvus Configuration
+ *
  * @author Calvin
  * @date 2021-12-12
  **/
