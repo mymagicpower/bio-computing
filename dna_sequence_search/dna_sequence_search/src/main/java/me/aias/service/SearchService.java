@@ -17,7 +17,7 @@ public interface SearchService {
 
     // 初始化向量引擎
     // Initialize vector engine
-    void initSearchEngine();
+    void initSearchEngine(Integer dimension);
 
     // 获取连接池
     // Get connection pool
@@ -38,7 +38,7 @@ public interface SearchService {
 
     // 创建 collection
     // Create collection
-    R<RpcStatus> createCollection(MilvusClient milvusClient, long timeoutMiliseconds);
+    R<RpcStatus> createCollection(MilvusClient milvusClient, Integer dimension, long timeoutMiliseconds) ;
 
     // 加载 collection
     // Load collection

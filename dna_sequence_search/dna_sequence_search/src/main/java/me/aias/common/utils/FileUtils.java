@@ -16,16 +16,19 @@
 package me.aias.common.utils;
 
 import cn.hutool.core.util.IdUtil;
+import com.google.common.io.Files;
 import me.aias.common.exception.BadRequestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * File工具类，扩展 hutool 工具包
@@ -34,9 +37,9 @@ import java.util.Date;
  * @author Zheng Jie
  * @date 2018-12-27
  */
-public class FileUtil extends cn.hutool.core.io.FileUtil {
+public class FileUtils extends cn.hutool.core.io.FileUtil {
 
-    private static final Logger log = LoggerFactory.getLogger(FileUtil.class);
+    private static final Logger log = LoggerFactory.getLogger(FileUtils.class);
 
     /**
      * 系统临时目录
@@ -84,21 +87,16 @@ public class FileUtil extends cn.hutool.core.io.FileUtil {
     public static final String OTHER = "OTHER";
 
     /**
-     * 根据日期生成本地图片相对保存路径
-     * Generate local image relative storage path based on date
+     * 读取文本文件
      */
-    public static String generatePath(String fileRoot) {
-        Date date = new Date();
-        // yyyy/MM/dd/"
-        String relativePath = DateUtil.YYYY_MM_dd.get().format(date);
-        String filePath = fileRoot + relativePath;
-        // 如果不存在,创建文件夹
-        // If it does not exist, create a folder
-        File f = new File(filePath);
-        if (!f.exists()) {
-            f.mkdirs();
+    public static List<String> readFile(File file) {
+        List<String> lines = null;
+        try {
+            lines = Files.readLines(file, Charset.defaultCharset());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return relativePath;
+        return lines;
     }
 
     /**
