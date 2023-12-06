@@ -100,10 +100,7 @@
 - Gitee:  https://gitee.com/mymagicpower/qubits     
 - GitHub: https://github.com/mymagicpower/qubits     
 
-#### 3. AI 桌面工具集 - 简单易用的AI桌面工具
-<div align="left">
-<img src="https://aiart.oss-cn-shanghai.aliyuncs.com/images/logo.png"  width = "200"  />
-</div>
+
 
 - 官网: https://www.aiarts.top/           
 - Gitee:  https://gitee.com/mymagicpower/easy_AI_apps        
